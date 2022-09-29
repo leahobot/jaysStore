@@ -651,8 +651,8 @@ padding: 6px;
 }
 .success, .cancel{
   width: 1000px;
-margin: auto;
-margin-top: 160px;
+  margin: auto;
+  margin-top: 160px;
   background-color: #dcdcdc;
   padding: 50px;
   border-radius: 15px;
@@ -695,6 +695,100 @@ margin-top: 160px;
 }
 .product-max-qty{
   margin-top: 10px;
+}
+
+.checkout{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.checkout-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#324d67;
+  border: 0.5px solid lightgrey;
+  border-radius: 0.3rem;
+  width: 37rem;
+  margin: 2rem 0;
+  padding: 3rem 0;
+}
+
+.checkout-fields{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+
+.checkout-fields input{
+  font-size: 1.5rem;
+  width: 30rem;
+  height: 3rem;
+  color:#324d67;
+  border: 0.5px solid lightgray;
+  border-radius: 0.2rem;
+  padding: 2rem 1.5rem;
+  outline: 0;
+  appearance: none;
+}
+
+.checkout-fields textarea{
+  font-size: 1.5rem;
+  width: 30rem;
+  height: 10rem;
+  resize: none;
+  color:#324d67; 
+  border: 0.5px solid lightgray;
+  border-radius: 0.2rem;
+  padding: 1rem 1.5rem;
+  outline: 0;
+}
+
+.checkout-fields input:focus,
+.checkout-fields textarea:active{
+   border: 1px solid #71A5DE;
+}
+
+.checkout-details{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.checkout-details .details-1,
+.checkout-details .details-2{
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-details p{
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.checkout-form button{
+  padding: 0.7rem 3rem;
+  background-color: white;
+  color: #71A5DE;
+  border: 2px solid #71A5DE;
+  border-radius: 0.4rem;
+  outline: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.checkout-form button:hover{
+  background-color: #71A5DE;
+  color: white;
+}
+
+.checkout-form button:active{
+  transform: translateY(3px);
 }
 
 @media screen and (max-width:800px) {
@@ -836,5 +930,27 @@ margin-top: 160px;
 .btn-container{
   width: 300px;
   margin: auto;
+}
+
+.checkout-form{
+   width: 90%; 
+}
+
+.checkout-fields{
+  align-items: center;
+  gap: 2rem;
+}
+
+.checkout-fields input{
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  padding: 2rem 0.5rem;
+}
+.checkout-fields textarea{
+  font-size: 1.5rem;
+  width: 100%;
+  height: 10rem;
+  padding: 0.5rem 1rem 0 0.5rem;
 }
 }
