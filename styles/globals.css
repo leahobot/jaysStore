@@ -29,14 +29,40 @@ width: 100%;
 .navbar-container{
   display: flex;
   justify-content: space-between;
-  margin: 6px 18px;
-  position: relative;
+  align-items: center;
+  padding: 0 3rem;
 }
 
-.brand_logo{
-  height: 3rem;
-  width: 3rem;
-  object-fit: cover;
+.nav-bg{
+  position: fixed;
+  inset:0;
+  width: 100%;
+  height: 6rem;
+  z-index: 10;
+  background-color: #F8F9FB;
+  box-shadow: 0 2px 15px 5px rgba(0, 0, 0, 0.2);
+  animation: navBg 1s ease forwards;
+}
+
+@keyframes navBg{
+  0%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.brand-logo{
+  cursor: pointer;
+}
+
+.brand-logo:hover{
+  opacity: 0.7;
+}
+
+.brand-logo:active{
+  transform: translateY(3px);
 }
 
 .marquee-text{
@@ -73,7 +99,7 @@ width: 100%;
 }
 
 .cart-icon{
-  font-size: 25px;
+  font-size: 3rem;
   color: gray;
   cursor: pointer;
   position: relative;
@@ -84,18 +110,25 @@ width: 100%;
 .cart-icon:hover{
   transform: scale(1.1,1.1);
 }
+
+.cart-icon:hover .cart-item-qty{
+    background-color: #f9844a;
+}
+
 .cart-item-qty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  top: 7px;
   right: -8px;
-  font-size: 12px;
+  font-size: 15px;
   color: #F8F9FB;
   background-color: #71A5DE;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  text-align: center;
-  font-weight: 600;
-
+  font-weight: 700;
 }
 .products-container{
   display: flex;
@@ -145,16 +178,27 @@ width: 100%;
   font-size: 20px;
 }
 .hero-banner-container button{
-   border-radius: 15px;
-  padding: 10px 16px;
+  border-radius: 10px;
+  padding: 15px 40px;
   background-color: #f9844a;
   color: white;
-  border: none;
+  border: 0;
+  outline: 0;
   margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.7s ease-in-out;
   z-index:10000 !important;
+}
+
+.hero-banner-container button:hover{
+  background-color: white;
+  color: #f9844a;
+}
+
+.hero-banner-container button:active{
+  transform: translateY(3px);
 }
 
 .hero-banner-container h3{
@@ -228,17 +272,40 @@ text-align: end;
   display: flex ;
   justify-content: space-between;
 }
+
 .banner-desc button{
-  border-radius: 15px;
-  padding: 10px 16px;
+  border-radius: 10px;
+  padding: 15px 40px;
   background-color: white;
   color: #9d8189;
-  border: none;
+  border: 2px solid transparent;
+  outline: 0;
   margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
+
+.banner-desc button:hover{
+  background-color: #9d8189;
+  border: 2px solid white;
+  color: white;
+}
+
+.banner-desc button:active{
+  transform: translateY(3px);
+}
+
+@media screen and (max-width: 850px){
+  .banner-desc button{
+    position: absolute;
+    top: -1rem;
+    left: 2rem;
+    padding: 10px 30px;
+  }
+}
+
 .banner-desc .left h3{
   font-weight: 900;
   font-size: 80px;
@@ -249,8 +316,6 @@ text-align: end;
 }
 .footer-banner-image{
   position: absolute;
-  /* top: -35%;
-  left: 8%; */
   top: -25%;
   left: 25%;
 }
@@ -286,7 +351,16 @@ text-align: end;
   float: right;
   padding: 40px 10px;
   position: relative;
-  
+  animation: showCart 0.8s ease-in both;
+}
+
+@keyframes showCart{
+  0%{
+    transform: translateX(600px);
+  }
+  100%{
+    transform: translateX(0);
+  }
 }
 
 .footer-container{
@@ -373,39 +447,44 @@ padding: 20px 10px;
 .total{
   display: flex;
   justify-content: space-between;
+  overflow-x: hidden;
 }
+
 .total h3{
   font-size: 22px;
-
 }
+
 .remove-item{
   font-size: 24px;
-  color: #71A5DE;
+  color: #FF3A44;
   cursor: pointer;
   background: transparent;
   border: none;
 }
 .cart-bottom{
   position: absolute;
-  bottom: 12px;
-  right: 5px;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  padding: 30px 65px; 
+  padding: 2rem 3rem;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-container{
   width: 400px;
   margin: auto;
 }
+
 .btn{
   width: 100%;
   max-width: 400px;
-  padding: 10px 12px;
+  padding: 17px 12px;
   border-radius: 15px;
   border: none;
   font-size: 20px;
-  margin-top: 10px;
-  margin-top: 40px;
+  margin-top: 2.5rem;
   text-transform: uppercase;
   background-color: #71A5DE;
   color: #F8F9FB;
@@ -416,6 +495,7 @@ padding: 20px 10px;
 .btn:hover{
   transform: scale(1.1,1.1);
 }
+
 .product-detail-container{
   display: flex;
  gap: 40px;
@@ -583,7 +663,7 @@ margin-top: 160px;
 }
 
 .success .icon {
-   color: green;
+   color: #71A5DE;
    font-size: 40px;
 }
 .success h2{
@@ -611,7 +691,7 @@ margin-top: 160px;
 }
 .success .description .email{
   margin-left: 5px;
-  color: #f02d34;
+  color: #71A5DE;
 }
 .product-max-qty{
   margin-top: 10px;
@@ -715,8 +795,6 @@ margin-top: 160px;
 .top{
   flex-wrap: wrap;
   gap: 10px;
-
-
 }
 .item-desc .bottom{
   margin-top: 30px;
