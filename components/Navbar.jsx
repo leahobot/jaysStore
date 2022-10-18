@@ -15,8 +15,8 @@ const Navbar = ({bg}) => {
 					<Image
 						src='/favicon.svg'
 						alt='brand_logo'
-						height={50}
-						width={50}
+						height={40}
+						width={40}
 						className='brand-logo'
 					/>
 				</Link>

@@ -9,8 +9,8 @@ const Product = ({product}) => {
 				<div className='product-card'>
 					<img
 						src={urlFor(product.image && product.image[0])}
-						width={250}
-						height={250}
+						width={230}
+						height={200}
 						className='product-image'
 					/>
 					<p className='product-name'>{product.name}</p>
